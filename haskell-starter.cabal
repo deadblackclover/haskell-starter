@@ -1,0 +1,36 @@
+cabal-version:      >=1.10
+name:               haskell-starter
+version:            0.1.0.0
+license:            GPL-3.0
+license-file:       LICENSE
+author:             DEADBLACKCLOVER
+maintainer:         deadblackclover@protonmail.com
+build-type:         Simple
+extra-source-files:
+  CHANGELOG.md
+  README.md
+
+executable haskell-starter
+  main-is:          Main.hs
+  hs-source-dirs:   src/
+  build-depends:    base >=4.13 && <4.14
+  default-language: Haskell2010
+
+library haskell-starter-lib
+  exposed-modules:  Lib
+  hs-source-dirs:   lib/
+  build-depends:    base >=4.13 && <4.14
+  default-language: Haskell2010
+
+test-suite tests
+  type:               exitcode-stdio-1.0
+  main-is:            Spec.hs
+  hs-source-dirs:     test/
+  other-modules:      LibSpec
+  ghc-options:        -Wall
+  build-depends:
+      base   >=4.13 && <4.14
+    , hspec  >=2    && <3
+
+  build-tool-depends: hspec-discover:hspec-discover >=2 && <3
+  default-language:   Haskell2010
