@@ -9,6 +9,7 @@ $ cabal install cabal-fmt
 
 ### Prettifier
 ```
-$ stylish-haskell -i -r .
-$ cabal-fmt -i *.cabal
+$ make stylish-haskell
+$ make cabal-fmt
+$ make fmt
 ```

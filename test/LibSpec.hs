@@ -1,9 +1,12 @@
 module LibSpec (spec) where
 
+import           Lib
 import           Test.Hspec
 
 spec :: Spec
 spec = do
-  describe "Lib" $ do
+  describe "Simple" $ do
     it "has correct" $ do
-      2 + 2 `shouldBe` 4
+      value `shouldBe` 42
+    it "has incorrent" $ do
+      value `shouldNotBe` 31337

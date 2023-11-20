@@ -22,15 +22,16 @@ library haskell-starter-lib
   build-depends:    base >=4.13 && <4.14
   default-language: Haskell2010
 
-test-suite tests
+test-suite haskell-starter-tests
   type:               exitcode-stdio-1.0
   main-is:            Spec.hs
   hs-source-dirs:     test/
   other-modules:      LibSpec
   ghc-options:        -Wall
   build-depends:
-      base   >=4.13 && <4.14
-    , hspec  >=2    && <3
+      base                 >=4.13 && <4.14
+    , haskell-starter-lib
+    , hspec                >=2    && <3
 
   build-tool-depends: hspec-discover:hspec-discover >=2 && <3
   default-language:   Haskell2010
